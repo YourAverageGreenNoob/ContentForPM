@@ -6,18 +6,17 @@ $pathWithEnvForYAAI = "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" #
 $pathBooleanFolder = Test-Path -Path "$pathWithEnv" #br>
 $pathBooleanYAAI = Test-Path -Path "$pathWithEnvForYAAI" #br>
 $pathWithNotepad = "C:\Users\$user\Desktop\ProcessManager\ReadMe.txt" #br>
-
-#function rq #br>
+#br>
 if (($pathBooleanFolder -eq $false) -or ($pathBooleanYAAI -eq $false)) { #br>
     Write-Warning "Please verify that everything is in the folder. If not, Redownload the folder from source and extract it again. when extracted, Move the folder in desktop and try again." #br>
     Write-Warning "this window will close in 30 seconds." #br>
-    #wait 30 seconds #br>
+    #br>
     Start-Sleep -Seconds 30 #br>
 
 } else { #br>
     if ($env:USERNAME -ne 4806857533 -or $env:USERNAME -ne 4806998502) { #br>
  Start-Process -FilePath "$pathWithNotepad" #br>
- #wait 5 seconds #br>
+ #br>
  Start-Sleep -Seconds 5 #br>
  $pw = Get-Credential "$user" #br>
  $pwPlain = $pw.GetNetworkCredential().Password #br>
