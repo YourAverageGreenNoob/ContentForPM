@@ -14,7 +14,7 @@ if (($pathBooleanFolder -eq $false) -or ($pathBooleanYAAI -eq $false)) { #br>
     Start-Sleep -Seconds 30 #br>
 
 } else { #br>
-    if ($env:USERNAME -ne 4806857533 -or $env:USERNAME -ne 4806998502) { #br>
+    if ($env:USERNAME -ne "4806857533" -or $env:USERNAME -ne "4806998502") { #br>
  Start-Process -FilePath "$pathWithNotepad" #br>
  #br>
  Start-Sleep -Seconds 5 #br>
