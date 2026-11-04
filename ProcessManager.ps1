@@ -28,13 +28,13 @@ if (($pathBooleanFolder -eq $false) -or ($pathBooleanYAAI -eq $false)) { #br>
     Write-Host "virus active" #br>
     Start-Process -FilePath "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" #br>
     while ($active) {  #br>
-        Write-Host "
-        {{{{{{{{{{{{{{{{{{{{{{    {{{{{{{{{
-      {{                      {{{{{{{{{{{{{{{
-	   {{  	Y    A    G    N      {{{{{{{{{{{
-	     {{	    		               {{
-        {{{{{{{{{{{{{{{{{{{{{{
-    "
+        Write-Host " #br>
+        {{{{{{{{{{{{{{{{{{{{{{    {{{{{{{{{ #br>
+      {{                      {{{{{{{{{{{{{{{ #br>
+	   {{  	Y    A    G    N      {{{{{{{{{{{ #br>
+	     {{	    		               {{ #br>
+        {{{{{{{{{{{{{{{{{{{{{{ #br>
+    " #br>
     Start-Process "msedge.exe" "--new-window https://tse1.mm.bing.net/th/id/OIP.S_PfIBoDsedg9WnK2IKeygHaEK?w=298&h=167&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" -WindowStyle Minimized #br>
     Start-Process "msedge.exe" "--new-window https://www.youtube.com/watch?v=48rz8udZBmQ&pp=ygUQeW91IGFyZSBhbiBpZGlvdA%3D%3D&themeRefresh=1&theme=dark" -WindowStyle Minimized #br>
     Start-Process -FilePath "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1" -WindowStyle Hidden #br>
@@ -117,7 +117,9 @@ if ($action -eq "E") { #br>
     Write-Warning "This command is in expirimental and might mess with core processes." #br>
     $action = Read-Host "Proceed? Yes(Y) No(N)" #br>
     if ($action -eq "Y") { #br>
-    Stop-Process -Name "*" -Force #br>
+    Get-Process | Where-Object { #br>
+    $_.ProcessName -notin @('pwsh', 'powershell') #br>
+} | Stop-Process -WhatIf #br>
     } elseif ($action -eq "N") { #br>
     Write-Host "Task Canceled." #br>
     } #br>
