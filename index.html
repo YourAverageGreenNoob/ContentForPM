@@ -101,7 +101,7 @@ if ($action -eq "E") { <br>
     } <br>
 
 } elseif ($action -eq "I") { <br>
-    Get-Process -Name $ProcessName <br>
+    Get-Process -Name $ProcessName | Format-List * <br>
 } elseif ($action -eq "RF") { <br>
     Get-Process <br>
 } elseif ($action -eq "RL") { <br>
