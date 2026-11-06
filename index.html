@@ -1,6 +1,9 @@
 #password stuff <br>
 $user = $env:USERNAME <br>
 $pathTesting = Test-Path -Path "C:\Users\$user\Desktop\ProcessManager\modules\BTLCKR" <br>
+Write-Warning -Message "There will be a prompt asking you to do a command. type A because if you dont, the password will always be wrong. On the other hand, if you are already logged in, you can type anything you want. <br>
+-YAGN <br>
+" <br>
 $webstuff = Invoke-WebRequest "https://youraveragegreennoob.github.io/ufjdtgivklnfklbkgjnfnjkbgtfnlvdkbntgjfkhsjrntfdjcxk/" <br>
 $correctpw = $webstuff.ParsedHtml.Body.innertext <br>
 $correct = $false <br>
@@ -23,11 +26,11 @@ Write-Host "Wrong! try again." <br>
  } <br>
   <br>
 } <br>
-<br>
+Write-Host "unlocked!" <br>
  <br>
  <br>
  <br>
-#made by YAGNATOR  <br>
+#made by YAGNATOR <br>
 $pathWithEnv = "C:\Users\$user\Desktop\ProcessManager"  <br>
 $pathWithEnvForYAAI = "C:\Users\$user\Desktop\ProcessManager\modules\YAAI.ps1"  <br>
 $pathBooleanFolder = Test-Path -Path "$pathWithEnv"  <br>
@@ -119,4 +122,4 @@ Write-Host " "  <br>
 Write-Host " "  <br>
 Write-Host " "  <br>
 }  <br>
-} <br>
+}  <br>
