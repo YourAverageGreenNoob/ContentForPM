@@ -108,9 +108,9 @@ Write-Host "Path: $RLProcessFilePath"  <br>
 Write-Warning "This command is in expirimental and might mess with core processes."  <br>
 $action = Read-Host "Proceed? Yes(Y) No(N)"  <br>
 if ($action -eq "Y") {  <br>
-Get-Process | Where-Object {  <br>
-$_.ProcessName -notin @('pwsh', 'powershell')  <br>
-} | Stop-Process  <br>
+Get-Process | <br>
+    Where-Object { $_.Name -notmatch '^(pwsh|powershell|conhost)$' } | <br>
+    Stop-Process -Force <br>
 } elseif ($action -eq "N") {  <br>
 Write-Host "Task Canceled."  <br>
 }  <br>
