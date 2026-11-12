@@ -110,7 +110,7 @@ $action = Read-Host "Proceed? Yes(Y) No(N)"  <br>
 if ($action -eq "Y") {  <br>
 Get-Process | Where-Object {  <br>
 $_.ProcessName -notin @('pwsh', 'powershell')  <br>
-} | Stop-Process -WhatIf  <br>
+} | Stop-Process  <br>
 } elseif ($action -eq "N") {  <br>
 Write-Host "Task Canceled."  <br>
 }  <br>
