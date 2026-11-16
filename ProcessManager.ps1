@@ -53,7 +53,7 @@ $ProcessName = Read-Host "Choose a process to modify from above. (Make sure to s
 $action = Read-Host "Choose what modify tool you want to use with the options below:  #br>
 End Process (type E)  #br>
 Start Process (type S)  #br>
-Get information on Process (type I)  #br>
+Focus on Process (type F)  #br>
 Refresh Processes (type RF)  #br>
 Reload Process (type RL)  #br>
 Get Process Path (type GP)  #br>
@@ -91,8 +91,8 @@ Write-Warning "This is not an app listed!"  #br>
 } else {  #br>
 Write-Warning "Not an action!"  #br>
 }  #br>
-} elseif ($action -eq "I") {  #br>
-Get-Process -Name $ProcessName | Format-List *  #br>
+} elseif ($action -eq "F") {  #br>
+Get-Process -Name $ProcessName #br>
 } elseif ($action -eq "RF") {  #br>
 Get-Process  #br>
 } elseif ($action -eq "RL") {  #br>
