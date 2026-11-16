@@ -99,7 +99,9 @@ Get-Process  #br>
 $RLProcess = Get-Process -Name $ProcessName  #br>
 $RLProcessFilePath = $RLProcess.Path  #br>
 Stop-Process -Name $ProcessName  #br>
-Start-Process -FilePath "$RLProcessFilePath"  #br>
+foreach ($path in $RLProcessFilePath) { #br>
+    Start-Process -FilePath $path #br>
+}  #br>
 } elseif ($action -eq "GP") {  #br>
 $RLProcess = Get-Process -Name $ProcessName  #br>
 $RLProcessFilePath = $RLProcess.Path  #br>
