@@ -26,6 +26,7 @@ Write-Host "Wrong! try again." <br>
  } <br>
   <br>
 } <br>
+Clear-Host <br>
 Write-Host "unlocked!" <br>
  <br>
  <br>
@@ -53,8 +54,8 @@ $ProcessName = Read-Host "Choose a process to modify from above. (Make sure to s
 $action = Read-Host "Choose what modify tool you want to use with the options below:  <br>
 End Process (type E)  <br>
 Start Process (type S)  <br>
-Get information on Process (type I)  <br>
-Refresh Processes (type RF)  <br>
+Get info on Process (type I)  <br>
+Refresh/update the Process status (type RF)  <br>
 Reload Process (type RL)  <br>
 Get Process Path (type GP)  <br>
 End All Process (Expirimental, Not reccomended)(EA)"  <br>
@@ -92,7 +93,11 @@ Write-Warning "This is not an app listed!"  <br>
 Write-Warning "Not an action!"  <br>
 }  <br>
 } elseif ($action -eq "I") {  <br>
-Get-Process -Name $ProcessName | Format-List *  <br>
+Get-Process -Name $ProcessName <br>
+$ProcessAmount = Get-Process -Name $ProcessName <br>
+Write-Host "There are $ProcessAmount.Count of these tasks open" <br>
+Write-Host "version info:" <br>
+Get-Process -Name $ProcessName -FileVersionInfo | Select-Object FileName, ProductVersion <br>
 } elseif ($action -eq "RF") {  <br>
 Get-Process  <br>
 } elseif ($action -eq "RL") {  <br>
